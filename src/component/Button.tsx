@@ -3,9 +3,10 @@ interface ButtonProps {
     bgColor?: string;
     textColor?: string;
     border?: string;
+    href?: string;
     }
 
-export function Button ({ title, bgColor, textColor, border }: ButtonProps) {
+export function Button ({ title, bgColor, textColor, border, href }: ButtonProps) {
     let hover = ""
     if (bgColor === "bg-white") {
         hover = "hover:bg-[#525050]"
@@ -13,5 +14,8 @@ export function Button ({ title, bgColor, textColor, border }: ButtonProps) {
         hover = "hover:bg-white"
         textColor = "hover:text-black"
     }
-  return <button className={`w-[170px] ${hover} ${border} h-[53px] font-inter rounded-full transition duration-150 ${bgColor} ${textColor}`}> {title} </button>
+
+    if (!href) {href = "#"}
+
+  return <a href={href}><button className={`w-[170px] ${hover} ${border} h-[53px] font-inter rounded-full transition duration-150 ${bgColor} ${textColor}`}> {title} </button></a>
 }

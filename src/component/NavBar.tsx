@@ -13,7 +13,7 @@ export function NavBar() {
                 <NavItem title='Testimonials' />
                 <NavItem title='Contact Us' />
             </div>
-            <Button title="Github" bgColor="bg-white" textColor="text-black" />
+            <Button href="https://github.com/between27/amena-webpage1" title="Github" bgColor="bg-white" textColor="text-black" />
         </nav>
     )
 }
